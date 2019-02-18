@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Members List Form</title>
+<link href="formvalid.css" rel="stylesheet">
+<script src="formvalid.js"></script>
+</head>
+<body onload="autoHideDataEntry();">
+<div id= "dataShowArea" align="center">
+<p> <br> <button id="toadd" onclick="myToggleFunction()">Add Data</button></p>
+</div>    
+
+<div id="form" align="center">
+<p id="head"></p>
+<form id="data" onsubmit='return formValidation()' align="center">
+<h2 align="center">Members List Form</h2>
+<label>Full Name:</label>
+<input id='firstname' type='text' required>
+<p id="p1"></p>
+
+<label>Phone  No:</label>
+<input id='phone' type='number' required>
+<p id="p2"></p>
+
+<label>E - Mail &nbsp;  : </label>
+<input id='email' type='text' required>
+<p id="p3"></p>
+
+<label>Address &nbsp; &nbsp;:  </label>
+<input id='addr' type='text' required>
+<p id="p4"></p>
+
+<input id='hdn' type='text' style="display: none">
+
+<input id="submit" type='submit' value='Submit'>
+</form>
+<div>
+    <p> <span id="dataPara"></span> </p>
+    <ul>     </ul>
+</div>
+</div>
+</body>
+</html>
