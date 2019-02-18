@@ -11,15 +11,18 @@ function formValidation() {
    
     var val = phone.value
     if (/^\d{10}$/.test(val)) {
+      document.getElementById("p2").innerHTML = "";
         // value is ok, use it
     } else {
        // alert("Invalid number; must be ten digits")
        var alertmsg = "Enter 10 digits";
        document.getElementById("p2").innerHTML = alertmsg;
-        phone.focus()
-        return false
+        phone.focus();
+        document.getElementById("p3").innerHTML = "";
+        return false;
     }
 
+    document.getElementById("p3").innerHTML = "";
     var x=document.getElementById("email").value;
     var atpos=x.indexOf("@");
     var dotpos=x.lastIndexOf(".");
@@ -31,7 +34,7 @@ function formValidation() {
       //alert("Not a valid e-mail address");
       return false;
       }
-
+     
     if(hdn.value!="")
     {
       if(dataArray.length>=hdn.value)
@@ -50,12 +53,12 @@ function formValidation() {
       dataArray.push({"Name": firstname.value,"PhoneNo": phone.value,"Email":email.value,"Address": addr.value});
     
     }
-   firstname.value = "";
-   phone.value = "";
-   email.value = "";
-   addr.value = "";
-   document.getElementById("p2").innerHTML = "";
-   document.getElementById("p3").innerHTML = "";
+    firstname.value = "";
+    phone.value = "";
+    email.value = "";
+    addr.value = "";
+    document.getElementById("p2").innerHTML = "";
+    document.getElementById("p3").innerHTML = "";
    autoHideDataEntry();
    listPopulate();
    return false;
@@ -135,8 +138,13 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
     var idi2=this.id;
     debugger;
-    var index =dataArray.indexOf(idi2);
-    delete dataArray[idi2];
+   // var index =dataArray.indexOf(idi2);
+   // delete dataArray[idi2];
+dataArray.splice(idi2, 1);
+listPopulate();
+
+
+    autoHideDataEntry();
   }
 }
 var edit = document.getElementsByClassName("editList");
