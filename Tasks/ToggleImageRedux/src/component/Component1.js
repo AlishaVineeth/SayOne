@@ -7,7 +7,8 @@ import {
 } from "react-native";
 import { connect } from 'react-redux'
 import styles from '../styles/styles'
-
+import changePic from '../actions/actionIndex'
+import { bindActionCreators } from 'redux'
 
  class Component1 extends Component{
     render(){
@@ -40,8 +41,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        changeImage: () => dispatch({ type: 'CHANGE_PICTURE' }),
+        changeImage: () => dispatch(changePic()),
     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component1)
+
+
+//...bindActionCreators(changePic, dispatch)

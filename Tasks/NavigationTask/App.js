@@ -11,10 +11,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button, TouchableOpacity, Image, Alert,TouchableHighlight} from 'react-native';
 import { createStackNavigator, createAppContainer, createDrawerNavigator, createBottomTabNavigator } from 'react-navigation'; 
 import { TextInput } from 'react-native-gesture-handler';
-//import Component1 from './components/Component1';
 
-// import DrawerScreen1 from './DrawerScreen1';
-// import DrawerScreen2 from './DrawerScreen2';
 
 
 
@@ -209,7 +206,7 @@ const DrawerNavigator = createDrawerNavigator({
     //Title
     screen: FirstActivity_StackNavigator,
     navigationOptions: {
-      drawerLabel: 'Screen 1',
+      //drawerLabel: 'Screen 1',
     },
   },
   DrawerScreen2: {
